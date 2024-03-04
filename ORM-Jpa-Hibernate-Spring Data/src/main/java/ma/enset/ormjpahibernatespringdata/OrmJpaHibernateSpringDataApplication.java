@@ -40,7 +40,7 @@ public class OrmJpaHibernateSpringDataApplication implements CommandLineRunner {
 
 		// Chercher des patients
 		System.out.println("Patients malades : ");
-		Iterable<Patient> sickPatients = patientRepo.findBySick(true);
+		Iterable<Patient> sickPatients = patientRepo.search(true);
 		sickPatients.forEach(System.out::println);
 
 		// Mettre à jour un patient
