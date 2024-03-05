@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface PatientRepo extends JpaRepository<Patient,Long> {
-    List<Patient> findBySick(boolean sick);
-    @Query("select p from Patient p where p.sick= :x") // findBySick <==> search
-    List<Patient> search(@Param("x") boolean b);
+            List<Patient> findBySick(boolean sick);
+            @Query("select p from Patient p where p.sick= :x") // findBySick <==> search
+            List<Patient> search(@Param("x") boolean b);
 }
