@@ -14,7 +14,7 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date date;
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)//it's ordinal(0,1,..) by default. we should make it string to get the string value of the enumeration
     private Status status;
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

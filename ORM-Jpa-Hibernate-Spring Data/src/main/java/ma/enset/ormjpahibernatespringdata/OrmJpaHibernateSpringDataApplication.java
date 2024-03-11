@@ -12,9 +12,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class OrmJpaHibernateSpringDataApplication implements CommandLineRunner {
-	@Autowired
+	//@Autowired
 	private PatientRepo patientRepo;
 	public static void main(String[] args) {
 		SpringApplication.run(OrmJpaHibernateSpringDataApplication.class, args);
