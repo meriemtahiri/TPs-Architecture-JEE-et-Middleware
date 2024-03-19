@@ -1,32 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{header.html}"
+>
 <head>
     <meta charset="UTF-8">
     <title>patients</title>
     <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
-    <link href="webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-<div class="p-3">
+<div layout:fragment="navbar">
+<div class="p-3 mt-5">
     <div class="card">
-        <div class="card-header">List patients</div>
+        <div class="card-header bg-body-tertiary">List patients</div>
         <div class="card-body">
             <form method="get" th:action="@{index}">
-                <label>keyword:
+                <label>Name:
                 <input th:value="${keyword}" type="text" name="keyword">
                 </label>
-                <button type="submit" class="btn btn-primary">search</button>
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-search"></i>
+                </button>
             </form>
             <table class="table">
                 <thead>
-                <tr> <th>Name</th> <th>Birthday</th> <th>Sick</th> <th>Score</th> <th></th></tr>
+                <tr> <th>Name</th> <th>Birthday</th> <th>Sick</th> <th>Score</th> <th></th> <th></th> </tr>
                 <tr th:each="p:${patients}">
                     <td th:text="${p.getName()}">
                     <td th:text="${p.getBirthday()}">
                     <td th:text="${p.isSick()}">
                     <td th:text="${p.getScore()}">
                     <td>
-                    <a onclick="confirm('are you sure?')" th:href="@{delete(id=${p.getId()},keyword=${keyword},page=${currentPage})}" class="btn btn-danger">delete</a>
+                    <a onclick="confirm('are you sure?')" th:href="@{delete(id=${p.getId()},keyword=${keyword},page=${currentPage})}" class="btn btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                    </td>
+                    <td>
+                        <a th:href="@{updatePatient(id=${p.getId()},keyword=${keyword},page=${currentPage})}" class="btn btn-success">
+                            <i class="bi bi-pen"></i>
+                        </a>
                     </td>
                 </tr>
                 </thead>
@@ -40,6 +53,7 @@
             </li>
         </ul>
     </div>
+</div>
 </div>
 
 </body>
