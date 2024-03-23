@@ -13,12 +13,13 @@
         span {
             color: red;
         }
+
     </style>
 </head>
 <body>
 <div layout:fragment="navbar">
     <div class="col-6 offset-3 mt-5">
-        <form method="post" th:action="@{save}">
+        <form method="post" th:action="@{/admin/save}">
 
             <div class="mb-3">
                 <label for="name">Name</label>

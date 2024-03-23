@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        body{
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1) 35%, rgba(0,212,255,1) 100%);
+            font-family: 'Poppins', sans-serif;
+
+        }
+        form{
+            border-radius: 20px;
+            margin-top: 100px !important;
+            width: 40% !important;
+            background-color: white !important;
+            padding: 50px;
+        }
+
+        .btn-primary{
+            width: 100%;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1) 35%, rgba(0,212,255,1) 100%);
+
+        }
+
+        .form-control{
+            color: rgba(0,0,0,.87);
+            border-bottom-color: rgba(0,0,0,.42);
+            box-shadow: none !important;
+            border: none;
+            border-bottom: 1px solid;
+            border-radius: 4px 4px 0 0;
+        }
+        h4{
+            font-size: 2rem !important;
+            font-weight: 700;
+        }
+        .form-label{
+            font-weight: 800 !important;
+        }
+        @media only screen and (max-width: 600px) {
+            form {
+                width: 100% !important;
+            }
+        }
+        @media only screen and (min-width: 600px) and (max-width: 900px) {
+            form {
+                width: 60% !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <form class="mx-auto" method="post" th:action="@{/login}">
+        <h4 class="text-center">Login</h4>
+        <div class="mb-3 mt-5">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password">
+            <div id="emailHelp" class="form-text mt-3">Forget password ?</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-5">Login</button>
+    </form>
+</div>
+
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>
