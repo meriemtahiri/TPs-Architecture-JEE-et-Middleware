@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31f35e9d-b413-4e0a-bc99-4a50daa92f27" name="Changes" comment="" />
+    <list default="true" id="31f35e9d-b413-4e0a-bc99-4a50daa92f27" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +34,8 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/merye/IdeaProjects/TPs Architecture JEE et Middleware/Framework",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/merye/IdeaProjects/TPs Architecture JEE et Middleware/TP1_Angular",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,6 +72,7 @@
       <workItem from="1708727863284" duration="219000" />
       <workItem from="1708728271562" duration="1729000" />
       <workItem from="1708731345700" duration="834000" />
+      <workItem from="1711461690086" duration="574000" />
     </task>
     <servers />
   </component>
