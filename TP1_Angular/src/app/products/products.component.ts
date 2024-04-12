@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit{
   ngOnInit(): void {
     this.productService.getProducts()
       .subscribe({
-        next : data => {this.products = data; console.log(data)},
+        next : data => this.products = data,
         error : err => console.log(err)
         }
       )
@@ -45,11 +45,10 @@ export class ProductsComponent implements OnInit{
   }
 
 
-
-  searchProduct() {
+  searchProduct(keyword: string) {
     this.productService.search(this.keyword)
       .subscribe({
-        next : data => console.log(data)
+        next : data => this.products = data
       })
   }
 }

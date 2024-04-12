@@ -9,7 +9,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
   public getProducts(): Observable<Array<ProductModel>>{
-    return this.http.get<Array<ProductModel>>("http://localhost:8080/products")
+    return this.http.get<Array<ProductModel>>(`http://localhost:8080/products`)
   }
   public patchCheckedProduct(product: ProductModel){
     return this.http.patch<ProductModel>(`http://localhost:8080/products/${product.id}`,{checked:!product.checked})

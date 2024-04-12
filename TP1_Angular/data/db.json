@@ -17,12 +17,6 @@
       "name": "LENOVO",
       "price": "5500",
       "checked": true
-    },
-    {
-      "id": "933e",
-      "name": "prod1",
-      "price": "1000",
-      "checked": true
     }
   ]
 }

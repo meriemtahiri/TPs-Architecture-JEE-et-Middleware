@@ -2,9 +2,9 @@
   <div class="card">
     <div class="card-body">
         <label>Name:
-          <input type="text" [(ngModel)]="keyword">{{keyword}}
+          <input type="text" [(ngModel)]="keyword">
         </label>
-        <button (click)="searchProduct()" class="ms-2 btn btn-success">
+        <button (click)="searchProduct(keyword)" class="ms-2 btn btn-success">
           <i class="bi bi-search"></i>
         </button>
       <table class="table">
