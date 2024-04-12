@@ -4,13 +4,13 @@
       "id": "821b",
       "name": "HP",
       "price": "2000",
-      "checked": false
+      "checked": true
     },
     {
       "id": "14aa",
       "name": "DELL",
       "price": "9000",
-      "checked": true
+      "checked": false
     },
     {
       "id": "1adb",
@@ -19,9 +19,9 @@
       "checked": true
     },
     {
-      "id": "210c",
-      "name": "prod22",
-      "price": "2500",
+      "id": "933e",
+      "name": "prod1",
+      "price": "1000",
       "checked": true
     }
   ]
