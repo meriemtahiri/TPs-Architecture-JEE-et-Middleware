@@ -2,6 +2,7 @@ package ma.enset.springmvcspringdatajpathymeleaf;
 
 import ma.enset.springmvcspringdatajpathymeleaf.entities.*;
 import ma.enset.springmvcspringdatajpathymeleaf.repositories.DoctorRepo;
+import ma.enset.springmvcspringdatajpathymeleaf.repositories.PatientRepo;
 import ma.enset.springmvcspringdatajpathymeleaf.services.HospitalImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

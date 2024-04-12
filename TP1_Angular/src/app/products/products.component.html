@@ -1,5 +1,32 @@
 <div class="p-2">
   <div class="card">
-    <div class="card-body">Products Component</div>
+    <div class="card-body">
+        <label>Name:
+          <input type="text" [(ngModel)]="keyword">{{keyword}}
+        </label>
+        <button (click)="searchProduct()" class="ms-2 btn btn-success">
+          <i class="bi bi-search"></i>
+        </button>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Id</th> <th>Name</th> <th>Price</th> <th>Checked</th> <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product["price"]}}</td>
+          <td>
+            <i (click)="handleCheckProduct(product)" [class]="product.checked? 'bi bi-check':'bi bi-circle'"></i>
+          </td>
+          <td>
+            <i (click)="deleteProduct(product)" class="btn btn-danger bi bi-trash"></i>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

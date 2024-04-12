@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": "821b",
+      "name": "HP",
+      "price": "2000",
+      "checked": false
+    },
+    {
+      "id": "14aa",
+      "name": "DELL",
+      "price": "9000",
+      "checked": true
+    },
+    {
+      "id": "1adb",
+      "name": "LENOVO",
+      "price": "5500",
+      "checked": true
+    },
+    {
+      "id": "210c",
+      "name": "prod22",
+      "price": "2500",
+      "checked": true
+    }
+  ]
+}

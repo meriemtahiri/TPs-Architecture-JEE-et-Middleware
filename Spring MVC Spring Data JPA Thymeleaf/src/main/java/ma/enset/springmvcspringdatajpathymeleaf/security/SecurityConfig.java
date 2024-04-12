@@ -3,6 +3,7 @@ package ma.enset.springmvcspringdatajpathymeleaf.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -24,13 +25,11 @@ public class SecurityConfig {
     }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity https) throws Exception {
-        https.formLogin().loginPage("/login").permitAll();
-//        https.formLogin();
-        https.authorizeHttpRequests().requestMatchers("/webjars/**").permitAll();
-        https.authorizeHttpRequests().requestMatchers("/user/**").hasAnyRole("USER");
-        https.authorizeHttpRequests().requestMatchers("/admin/**").hasAnyRole("ADMIN");
-        https.authorizeHttpRequests().anyRequest().authenticated();
-        https.exceptionHandling().accessDeniedPage("/unauthorized");
+        https.formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll();
+        https.authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasRole("ADMIN"))
+             .authorizeHttpRequests(ar->ar.requestMatchers("/webjars/**").permitAll())
+             .authorizeHttpRequests(ar->ar.requestMatchers("/user/**").hasRole("USER"))
+             .authorizeHttpRequests(ar->ar.anyRequest().authenticated());
         return https.build();
     }
 }

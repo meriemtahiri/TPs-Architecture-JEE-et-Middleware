@@ -1,5 +1,34 @@
-<div class="p-2">
-  <div class="card">
-    <div class="card-body">New Products Component</div>
+<div class="row p-3">
+  <div class="col-md-6 offset-3">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input id="name" class="form-control" type="text" formControlName="name"/>
+            <span class="text-danger" *ngIf="productForm.controls['name'].errors
+            && (productForm.controls['name'].touched || productForm.controls['name'].dirty  )">
+              {{getErrorMessage('Name',productForm.controls['name'].errors)}}
+            </span>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input id="price" class="form-control" type="text" formControlName="price"/>
+            <span class="text-danger" *ngIf="productForm.controls['price'].errors
+            && (productForm.controls['price'].touched || productForm.controls['price'].dirty  )">
+              {{getErrorMessage('Price',productForm.controls['price'].errors)}}
+            </span>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Checked</label>
+            <input id="checked" class="form-check" type="checkbox" formControlName="checked"/>
+          </div>
+          <button [disabled]="productForm.invalid" class="btn btn-primary">Save</button>
+        </form>
+
+      </div>
+    </div>
   </div>
 </div>
