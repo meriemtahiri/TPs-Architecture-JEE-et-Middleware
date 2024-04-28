@@ -4,13 +4,13 @@
         <label>Name:
           <input type="text" [(ngModel)]="keyword">
         </label>
-        <button (click)="searchProduct(keyword)" class="ms-2 btn btn-success">
+        <button (click)="getProducts()" class="ms-2 btn btn-success">
           <i class="bi bi-search"></i>
         </button>
       <table class="table">
         <thead>
         <tr>
-          <th>Id</th> <th>Name</th> <th>Price</th> <th>Checked</th> <th>Delete</th>
+          <th>Id</th> <th>Name</th> <th>Price</th> <th>Checked</th> <th>Delete</th> <th>Update</th>
         </tr>
         </thead>
         <tbody>
@@ -24,9 +24,17 @@
           <td>
             <i (click)="deleteProduct(product)" class="btn btn-danger bi bi-trash"></i>
           </td>
+          <td>
+            <i (click)="updateProduct(product)" class="btn btn-success bi bi-pen"></i>
+          </td>
         </tr>
         </tbody>
       </table>
+      <ul class="nav nav-pills">
+        <li *ngFor="let page of [].constructor(totalPages); let i=index">
+          <button (click)="handlePage(i+1)" [ngClass]="currentPage==i+1? 'btn btn-dark':'btn btn-outline-dark'">{{(i+1)}}</button>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

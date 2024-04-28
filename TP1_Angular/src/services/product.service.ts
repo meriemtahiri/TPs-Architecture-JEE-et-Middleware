@@ -8,8 +8,8 @@ import {ProductModel} from "../model/product.model";
 export class ProductService {
 
   constructor(private http: HttpClient) { }
-  public getProducts(): Observable<Array<ProductModel>>{
-    return this.http.get<Array<ProductModel>>(`http://localhost:8080/products`)
+  public getProducts(keyword: string,page: number=1,size: number=1){
+    return this.http.get<Array<ProductModel>>(`http://localhost:8080/products?name_like=${keyword}&_page=${page}&_limit=${size}`,{observe: 'response'})
   }
   public patchCheckedProduct(product: ProductModel){
     return this.http.patch<ProductModel>(`http://localhost:8080/products/${product.id}`,{checked:!product.checked})
@@ -23,7 +23,12 @@ export class ProductService {
     return this.http.post<ProductModel>(`http://localhost:8080/products`,product)
   }
 
-  search(keyword: string):Observable<Array<ProductModel>> {
-    return this.http.get<Array<ProductModel>>(`http://localhost:8080/products?name_like=${keyword}`)
+
+  updateProduct(product: ProductModel) {
+    return this.http.patch<ProductModel>(`http://localhost:8080/products/${product.id}`,product)
+  }
+
+  getProductById(id: number) {
+    return this.http.get<ProductModel>(`http://localhost:8080/products/${id}`)
   }
 }
