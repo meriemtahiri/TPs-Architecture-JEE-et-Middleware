@@ -6,11 +6,14 @@ import {ProductModel} from "../model/product.model";
 })
 export class AppStateService {
   public productState = {
-    products : [],
+    products : [] as ProductModel[],
     keyword: "",
     currentPage :1,
     pageSize : 3,
     totalPages : 0,
+    totalProducts : 0,
+    checked: 0
+
   }
   constructor() { }
 }

@@ -1,2 +1,5 @@
-package ma.enset.backend.ENUMS;public enum OperationType {
+package ma.enset.backend.ENUMS;
+
+public enum OperationType {
+    DEBIT, CREDIT
 }

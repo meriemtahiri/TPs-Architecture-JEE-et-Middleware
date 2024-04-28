@@ -1,22 +1,40 @@
 {
   "products": [
     {
-      "id": "821b",
-      "name": "HP",
-      "price": "2000",
-      "checked": true
-    },
-    {
       "id": "14aa",
       "name": "DELL",
       "price": "9000",
-      "checked": false
+      "checked": true
     },
     {
       "id": "1adb",
       "name": "LENOVO",
       "price": "5500",
       "checked": true
+    },
+    {
+      "name": "prod2",
+      "price": "1254",
+      "checked": true,
+      "id": "Tqi6dh5"
+    },
+    {
+      "name": "prod3",
+      "price": "1454",
+      "checked": true,
+      "id": "5L_Fs1R"
+    },
+    {
+      "name": "prod4",
+      "price": "5222",
+      "checked": false,
+      "id": "DtKIk1L"
+    },
+    {
+      "name": "p5rod",
+      "price": "10000",
+      "checked": true,
+      "id": "PKp22Mq"
     }
   ]
 }

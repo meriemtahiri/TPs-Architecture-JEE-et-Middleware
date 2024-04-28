@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators} from "@angular/forms";
-import {ProductService} from "../services/product.service";
+import {ProductService} from "../../services/product.service";
 import {CommonModule} from "@angular/common";
 
 @Component({

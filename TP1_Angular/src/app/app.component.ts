@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {CommonModule, NgForOf} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {DashboardComponent} from "../components/dashboard/dashboard.component";
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     NgForOf,
     CommonModule,
     HttpClientModule,
+    DashboardComponent,
 
   ],
   templateUrl: './app.component.html',

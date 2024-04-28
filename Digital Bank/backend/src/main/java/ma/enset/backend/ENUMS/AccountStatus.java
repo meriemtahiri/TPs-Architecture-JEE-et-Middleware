@@ -1,4 +1,5 @@
-package ma.enset.backend.ENTITIES;
+package ma.enset.backend.ENUMS;
 
-public class AccountStatus {
+public enum AccountStatus {
+    CREATED, ACTIVATED, SUSPENDED
 }

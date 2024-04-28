@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
         <label>Name:
-          <input type="text" [(ngModel)]="keyword">
+          <input type="text" [(ngModel)]="appState.productState.keyword">
         </label>
         <button (click)="getProducts()" class="ms-2 btn btn-success">
           <i class="bi bi-search"></i>
@@ -14,7 +14,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of appState.productState.products">
           <td>{{product.id}}</td>
           <td>{{product.name}}</td>
           <td>{{product["price"]}}</td>
@@ -31,8 +31,8 @@
         </tbody>
       </table>
       <ul class="nav nav-pills">
-        <li *ngFor="let page of [].constructor(totalPages); let i=index">
-          <button (click)="handlePage(i+1)" [ngClass]="currentPage==i+1? 'btn btn-dark':'btn btn-outline-dark'">{{(i+1)}}</button>
+        <li *ngFor="let page of [].constructor(appState.productState.totalPages); let i=index">
+          <button (click)="handlePage(i+1)" [ngClass]="appState.productState.currentPage==i+1? 'btn btn-dark':'btn btn-outline-dark'">{{(i+1)}}</button>
         </li>
       </ul>
     </div>
