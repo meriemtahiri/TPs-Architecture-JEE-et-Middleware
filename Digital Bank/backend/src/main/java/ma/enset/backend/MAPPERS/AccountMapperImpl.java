@@ -31,12 +31,12 @@ public class AccountMapperImpl {
         return savingAccountDTO;
     }
 
-    public SavingAccount fromSavingAccountDTO(SavingAccountDTO savingBankAccountDTO){
-        SavingAccount savingAccount=new SavingAccount();
-        BeanUtils.copyProperties(savingBankAccountDTO,savingAccount);
-        savingAccount.setCustomer(fromCustomerDTO(savingBankAccountDTO.getCustomerDTO()));
-        return savingAccount;
-    }
+//    public SavingAccount fromSavingAccountDTO(SavingAccountDTO savingBankAccountDTO){
+//        SavingAccount savingAccount=new SavingAccount();
+//        BeanUtils.copyProperties(savingBankAccountDTO,savingAccount);
+//        savingAccount.setCustomer(fromCustomerDTO(savingBankAccountDTO.getCustomerDTO()));
+//        return savingAccount;
+//    }
 
     public CurrentAccountDTO fromCurrentAccount(CurrentAccount currentAccount){
         CurrentAccountDTO currentAccountDTO=new CurrentAccountDTO();
@@ -46,12 +46,12 @@ public class AccountMapperImpl {
         return currentAccountDTO;
     }
 
-    public CurrentAccount fromCurrentAccountDTO(CurrentAccountDTO currentBankAccountDTO){
-        CurrentAccount currentAccount=new CurrentAccount();
-        BeanUtils.copyProperties(currentBankAccountDTO,currentAccount);
-        currentAccount.setCustomer(fromCustomerDTO(currentBankAccountDTO.getCustomerDTO()));
-        return currentAccount;
-    }
+//    public CurrentAccount fromCurrentAccountDTO(CurrentAccountDTO currentBankAccountDTO){
+//        CurrentAccount currentAccount=new CurrentAccount();
+//        BeanUtils.copyProperties(currentBankAccountDTO,currentAccount);
+//        currentAccount.setCustomer(fromCustomerDTO(currentBankAccountDTO.getCustomerDTO()));
+//        return currentAccount;
+//    }
 
     public OperationDTO fromOperation(Operation accountOperation){
         OperationDTO accountOperationDTO=new OperationDTO();
