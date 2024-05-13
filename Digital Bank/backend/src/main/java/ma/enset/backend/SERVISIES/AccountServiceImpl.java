@@ -33,6 +33,12 @@ public class AccountServiceImpl implements AccountService {
     private AccountMapperImpl accountMapper;
 
     @Override
+    public List<CustomerDTO> searchCustomers(String keyword) {
+        List<Customer> customers = customerRepo.searchCustomer(keyword);
+        return customers.stream().map(c -> accountMapper.fromCustomer(c)).collect(Collectors.toList());
+    }
+
+    @Override
     public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
         log.info("Saving new Customer");
         return accountMapper.fromCustomer(customerRepo.save(accountMapper.fromCustomerDTO(customerDTO)));
@@ -47,7 +53,7 @@ public class AccountServiceImpl implements AccountService {
         customerRepo.deleteById(customerId);
     }
 
-    @Override
+        @Override
     public CurrentAccountDTO saveCurrentAccount(double initialBalance, double overDraft, Long customerId) throws CustomerNotFoundException {
         Customer customer = customerRepo.findById(customerId).orElse(null);
         if(customer==null) throw new CustomerNotFoundException("Customer not found!");
@@ -168,4 +174,5 @@ public class AccountServiceImpl implements AccountService {
         accountHistoryDTO.setTotalPages(accountOperations.getTotalPages());
         return accountHistoryDTO;
     }
+
 }

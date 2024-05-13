@@ -19,11 +19,14 @@ public class CustomerRestAPI {
     public List<CustomerDTO> customers(){
         return accountService.listCustomers();
     }
+    @GetMapping("/customers/search")
+    public List<CustomerDTO> searchCustomers(@RequestParam(name = "keyword",defaultValue = "") String keyword){
+        return accountService.searchCustomers("%"+keyword+"%");
+    }
     @GetMapping("/customers/{id}")
     public CustomerDTO getCustomer(@PathVariable(name = "id") Long customerId) throws CustomerNotFoundException {
         return accountService.getCustomer(customerId);
     }
-
     @PostMapping("/customers")
     public CustomerDTO saveCustomer(@RequestBody CustomerDTO customerDTO){
         return accountService.saveCustomer(customerDTO);

@@ -8,6 +8,8 @@ import ma.enset.backend.EXCEPTIONS.CustomerNotFoundException;
 import java.util.List;
 
 public interface AccountService {
+    List<CustomerDTO> searchCustomers(String keyword);
+
     CustomerDTO saveCustomer(CustomerDTO customerDTO);
     CustomerDTO updateCustomer(CustomerDTO customerDTO);
     void deleteCustomer(Long customerId);
