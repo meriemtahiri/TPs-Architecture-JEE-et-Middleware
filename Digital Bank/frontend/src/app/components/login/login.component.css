@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+/* Ensure the container takes full height of the viewport */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/assets/bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.container {
+  font-family: Raleway, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.screen {
+  background: transparent;
+  position: relative;
+  height: 450px;
+  width: 380px;
+  border: 2px solid rgba(255, 255, 255, .2);
+  box-shadow: 0 0 24px #5C5696;
+  backdrop-filter: blur(9px);
+  color: white;
+  border-radius: 14px;
+}
+
+.login {
+  padding: 30px;
+  height: 100%;
+}
+
+.login__field {
+  padding: 20px 0;
+  position: relative;
+}
+
+
+.login__input {
+  border: none;
+  border-bottom: 2px solid #D1D1D4;
+  background: none;
+  padding: 10px 10px 10px 24px;
+  width: 100%;
+  transition: .2s;
+  color: white;
+}
+
+button {
+  width: 60%;
+  height: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 60px;
+  border-radius: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #7355be, #2ea492);
+  border: none;
+  cursor: pointer;
+}
+button:focus {
+  border-color: transparent;
+}
+button:hover {
+  background: #2ea492;
+}
+
+
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+  outline: none;
+  border-bottom-color: transparent;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.centered-image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 14px; /* Optional: Add some border-radius to the image */
+}
+
+
+
